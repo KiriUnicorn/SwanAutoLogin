@@ -4,9 +4,14 @@ import subprocess
 from time import sleep
 
 # 常量
+# target_host 为你的校园网登录地址
 target_host = "192.168.240.3"
+# WIFI_NAME 为你的校园网WIFI名字
 WIFI_NAME = "SWXY-WIFI"
-
+# 登录手机号
+PHONE = '你的手机号账号'
+# 登录密码
+PASSWORD = '你的密码'
 
 # 寻找 SSID 字段
 def Check_Wifi():
@@ -57,12 +62,10 @@ while True:
         url = "http://192.168.240.3/drcom/login"
         # 生成当前毫秒时间戳
         timestamp = int(time.time() * 1000)
-        phone = '19313183825'
-        pasword = '090010'
         params = {
                 'callback': f'dr{timestamp}',
-                'DDDDD': phone,
-                'upass': pasword,
+                'DDDDD': PHONE,
+                'upass': PASSWORD,
                 '0MKKey': '123456',
                 'R1': '0',
                 'R3': '0',
